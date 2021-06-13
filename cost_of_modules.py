@@ -16,7 +16,7 @@ def cost_of_modules(lines):
     for node in all_nodes:
         visited = defaultdict(bool)
         stack = []
-        cost_of_modules_utils(node, visited, stack, graph)
+        _cost_of_modules_utils(node, visited, stack, graph)
         res.append((node, len(stack)))
     return res
 
@@ -25,7 +25,7 @@ def _cost_of_modules_utils(node, visited, stack, graph):
     visited[node] = True
     for n in graph[node]:
         if not visited[n]:
-            cost_of_modules_utils(n, visited, stack, graph)
+            _cost_of_modules_utils(n, visited, stack, graph)
     stack.append(node)
 
 
