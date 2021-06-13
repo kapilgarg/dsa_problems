@@ -21,7 +21,7 @@ def cost_of_modules(lines):
     return res
 
 
-def cost_of_modules_utils(node, visited, stack, graph):
+def _cost_of_modules_utils(node, visited, stack, graph):
     visited[node] = True
     for n in graph[node]:
         if not visited[n]:
